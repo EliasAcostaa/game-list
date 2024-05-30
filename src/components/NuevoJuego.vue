@@ -33,32 +33,11 @@
             </div>
         </form>
     </div>
-    <div id="listaJuegos">
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Plataforma</th>
-                    <th>Estado</th>
-                    <th>Puntaje</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="juego of juegos" :key="juego.name">
-                    <td>{{ juego.name }}</td>
-                    <td>{{ juego.platform }}</td>
-                    <td>{{ juego.state }}</td>
-                    <td>{{ juego.rating }}</td>
-                    <td>opciones</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    
 </template>
 
 <script setup>
-    import { ref, computed } from 'vue'
+    import { ref, computed, defineEmits } from 'vue'
 
     let juego = ref({
         nombreJ: '',
@@ -67,16 +46,11 @@
         puntaje: ''
     })
 
-    let juegos = ref([])
+    const emitEvent = defineEmits(["AddGame"])
 
     const handleAdd = () => {
         if(!validName.value && !validRating.value){
-            juegos.value.push({
-                name: juego.value.nombreJ,
-                platform: juego.value.plataforma,
-                state: juego.value.estado,
-                rating: juego.value.puntaje
-            })
+            emitEvent("add-game", {...juego.value})
             juego.value.nombreJ = ''
             juego.value.puntaje = ''
         }
