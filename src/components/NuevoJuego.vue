@@ -54,6 +54,8 @@
         if(!invalidName.value && !invalidRating.value && !invalidOption.value){
             emitEvent("add-game", {...juego.value})
             juego.value.nombreJ = ''
+            juego.value.plataforma = '',
+            juego.value.estado = '',
             juego.value.puntaje = ''
         }
         
