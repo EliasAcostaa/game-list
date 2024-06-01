@@ -58,7 +58,6 @@
             juego.value.estado = '',
             juego.value.puntaje = ''
         }
-        
     }
 
     const invalidOption = computed(() => { return (juego.value.plataforma === '' || juego.value.estado === '')})
