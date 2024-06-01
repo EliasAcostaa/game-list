@@ -9,6 +9,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color:#cd96db;  /* color de todo el home */ 
+  height: 100vh;  /* hace la diferencia a la hora de colorear el fondo */
 }
 
 nav {

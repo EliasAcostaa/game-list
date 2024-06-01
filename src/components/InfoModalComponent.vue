@@ -6,7 +6,7 @@
         <p>Plataforma: {{ props.juego.plataforma }}</p>
         <p>Estado: {{ props.juego.estado }}</p>
         <p>Puntaje: {{ props.juego.puntaje }}</p>
-        <button @click="closeModal">Cerrar</button>
+        <button id="botonCerrar" @click="closeModal">Cerrar</button>
       </div>
     </div>
   </template>
@@ -46,11 +46,25 @@
   }
   
   .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
+    background: rgba(161, 69, 69, 0.767);
+    padding: 15px;
+    border-radius: 10%;
     min-width: 300px;
     position: relative;
+    border: 5px solid #000000;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffff;
   }
+
+  #botonCerrar {
+    color:#ffffff;
+    padding: 5px;
+    background-color: rgb(5, 10, 71);
+    border: solid rgb(2, 2, 48);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 10rem;
+  }
+
   </style>
   
