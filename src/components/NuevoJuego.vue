@@ -65,10 +65,7 @@
 
     const invalidName = computed(() => { return juego.value.nombreJ.trim() === ''})
 
-    const invalidRating = computed(() => { 
-        const puntaje = juego.value.puntaje;
-        return puntaje !== '' && (puntaje < 1 || puntaje > 10);
-    })
+    const invalidRating = computed(() => { return juego.value.puntaje !== '' && (juego.value.puntaje < 1 || juego.value.puntaje > 10);})
 </script>
 
 <style scoped>
