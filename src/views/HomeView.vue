@@ -42,7 +42,7 @@
                   <td>{{ juego.plataforma }}</td>
                   <td>{{ juego.estado }}</td>
                   <td>{{ juego.puntaje }}</td>
-                  <td><button @click="abrirModal(juego)">Mas Info</button>
+                  <td><button id="btnMasInfo" @click="abrirModal(juego)">Mas Info</button>
                       <ModalInfo :visible="showModal" :juego="juegoActual" @update:visible="showModal = $event" />
                   </td>
                 </tr>
@@ -143,6 +143,15 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
+#btnMasInfo {
+  color:#ffffff;
+    padding: 5px;
+    background-color: rgb(144, 34, 167);
+    border: solid rgb(54, 7, 66);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 5rem;
+}
 
 
 /* ICONOS PROPIEDADES */
